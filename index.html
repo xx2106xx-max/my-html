@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エビデンスで学ぶ！グリセリン浣腸（GE）安全実践マスター教材</title>
+  <style>
+    :root {
+      --primary-dark: #004b87;
+      --primary: #0277bd;
+      --primary-light: #e1f5fe;
+      --accent: #00acc1;
+      --danger: #d32f2f;
+      --danger-bg: #ffebee;
+      --warning: #f57c00;
+      --warning-bg: #fff3e0;
+      --success: #2e7d32;
+      --success-bg: #e8f5e9;
+      --text-main: #263238;
+      --text-muted: #546e7a;
+      --bg-body: #f4f9fd;
+      --bg-card: #ffffff;
+      --border: #cfd8dc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 75, 135, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .header-title p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.2rem;
+    }
+
+    .progress-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      min-width: 220px;
+    }
+
+    .progress-label {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: #4dd0e1;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Navigation Tabs */
+    .nav-container {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+
+    .nav-tabs {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+      list-style: none;
+    }
+
+    .nav-tabs li {
+      flex: 1;
+      min-width: 150px;
+    }
+
+    .nav-btn {
+      width: 100%;
+      padding: 1rem 0.8rem;
+      border: none;
+      background: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .nav-btn:hover {
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .nav-btn.active {
+      color: var(--primary-dark);
+      border-bottom-color: var(--primary);
+      background-color: #f8fdff;
+    }
+
+    /* Main Content Layout */
+    main {
+      max-width: 1050px;
+      margin: 2rem auto;
+      padding: 0 1.2rem 4rem;
+    }
+
+    .chapter-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .chapter-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Typography & Cards */
+    .chapter-header {
+      background: var(--bg-card);
+      border-left: 6px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 1.8rem;
+    }
+
+    .chapter-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+    }
+
+    .chapter-header h2 {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 10px;
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 75, 135, 0.06);
+      border: 1px solid #e3f2fd;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: var(--primary-dark);
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Alert Boxes */
+    .alert {
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border-left: 5px solid;
+    }
+
+    .alert-danger {
+      background: var(--danger-bg);
+      border-left-color: var(--danger);
+      color: #b71c1c;
+    }
+
+    .alert-warning {
+      background: var(--warning-bg);
+      border-left-color: var(--warning);
+      color: #e65100;
+    }
+
+    .alert-info {
+      background: var(--primary-light);
+      border-left-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      background: #fff;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+
+    th {
+      background: var(--primary-dark);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fbff;
+    }
+
+    /* Visual Diagrams & SVG Boxes */
+    .diagram-box {
+      background: #fafdff;
+      border: 1px solid #b3e5fc;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    /* Bar Chart CSS */
+    .bar-chart {
+      margin: 1rem 0;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .bar-label {
+      width: 130px;
+      font-weight: 600;
+      text-align: right;
+      padding-right: 1rem;
+    }
+    .bar-track {
+      flex: 1;
+      background: #eceff1;
+      height: 22px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.75rem;
+      line-height: 22px;
+      padding-left: 8px;
+      font-weight: bold;
+    }
+    .bar-fill.danger {
+      background: var(--danger);
+    }
+
+    /* Interactive Flow Simulator */
+    .flow-sim {
+      background: #f0f7ff;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 1.2rem 0;
+    }
+
+    .flow-question {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+
+    .flow-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.65rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .btn-yes { background: var(--primary); color: #fff; }
+    .btn-no { background: #546e7a; color: #fff; }
+    .btn-reset { background: #cfd8dc; color: #263238; margin-top: 1rem; }
+
+    /* Summary, Glossary, Quiz */
+    .summary-box {
+      background: linear-gradient(to right, #e1f5fe, #f1f8e9);
+      border-left: 5px solid var(--accent);
+      padding: 1.4rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    .summary-box h3 {
+      color: #006064;
+      margin-bottom: 0.8rem;
+    }
+
+    .summary-box ul {
+      padding-left: 1.4rem;
+    }
+
+    .glossary-item {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+    }
+
+    .glossary-title {
+      width: 100%;
+      text-align: left;
+      background: #f4f9fd;
+      padding: 0.8rem 1rem;
+      border: none;
+      font-weight: 700;
+      color: var(--primary-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .glossary-content {
+      padding: 0.9rem 1rem;
+      background: #fff;
+      display: none;
+      font-size: 0.92rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .quiz-box {
+      background: #fff;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .quiz-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .quiz-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .quiz-q {
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--primary-dark);
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .quiz-opt {
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #f9fbfd;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.92rem;
+      transition: all 0.2s;
+    }
+
+    .quiz-opt:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+    }
+
+    .quiz-feedback {
+      margin-top: 0.8rem;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      display: none;
+    }
+
+    .quiz-feedback.correct {
+      background: var(--success-bg);
+      color: var(--success);
+      border: 1px solid #a5d6a7;
+      display: block;
+    }
+
+    .quiz-feedback.incorrect {
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid #ef9a9a;
+      display: block;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin: 1rem 0;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--primary-dark);
+      color: #cfd8dc;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-title">
+      <h1>🏥 グリセリン浣腸（GE）安全実践マスター教材</h1>
+      <p>初学者向け：科学的根拠（エビデンス）に基づくアセスメント・実施手順・有害事象予防</p>
+    </div>
+    <div class="progress-box">
+      <div class="progress-label">
+        <span>理解確認テスト達成度</span>
+        <span id="score-text">0 / 15 問正解</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-container">
+  <ul class="nav-tabs">
+    <li><button class="nav-btn active" onclick="openTab('ch1')">第1章：基礎と作用機序</button></li>
+    <li><button class="nav-btn" onclick="openTab('ch2')">第2章：有害事象と危険性</button></li>
+    <li><button class="nav-btn" onclick="openTab('ch3')">第3章：事前アセスメント</button></li>
+    <li><button class="nav-btn" onclick="openTab('ch4')">第4章：安全な実施手順</button></li>
+    <li><button class="nav-btn" onclick="openTab('ch5')">第5章：実施後の観察</button></li>
+    <li><button class="nav-btn" onclick="openTab('ref')">📚 参考文献・動画</button></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- ==================== 第1章 ==================== -->
+  <section id="ch1" class="chapter-section active">
+    <div class="chapter-header">
+      <span class="chapter-badge">Chapter 1</span>
+      <h2>グリセリン浣腸の基礎知識と作用機序・適応の見直し</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. グリセリン浣腸（GE）とは？</h3>
+      <p>
+        グリセリン浣腸（Glycerin Enema：GE）は、日本薬局方において<strong>「便秘や腸疾患時の排便に50%グリセリン液を10〜150mL浣腸剤として用いる」</strong>と定められている排泄援助技術です。非常に効果が高い反面、<strong>身体的侵襲が強く重篤な合併症を引き起こすリスクがある看護技術</strong>として位置づけられています。
+      </p>
+      <div class="alert alert-info">
+        <strong>💡 現代における適応の見直し（エビデンスの動向）</strong><br>
+        かつては「手術前処置」や「分娩前処置」として日常的にグリセリン浣腸が行われていました。しかし近年の比較研究により、術前や分娩前に浣腸を行わなくても術後合併症や分娩経過に差がないことが明らかになり、<strong>不必要な浣腸は減少・代替される傾向</strong>にあります。現在は「真に必要な症例を見極め、安全に実施する」ことが求められています。
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. なぜ便が出るのか？（3つの作用機序と実証研究）</h3>
+      <p>50%グリセリン液が直腸内に注入されると、以下の3つの作用によって速やかに排便が促されます。</p>
+
+      <div class="grid-3" style="margin-top:1rem;">
+        <div class="diagram-box">
+          <h4>① 浸透圧作用</h4>
+          <p style="font-size:0.88rem; margin-top:0.4rem;">高張液（50%グリセリン）の強い浸透圧により、直腸壁（血管・組織間隙）から腸管内へ水分を引き込みます。</p>
+        </div>
+        <div class="diagram-box">
+          <h4>② 便の軟化・潤滑作用</h4>
+          <p style="font-size:0.88rem; margin-top:0.4rem;">引き込まれた水分とグリセリン液自体が硬い糞便に浸透・付着し、便を軟化・膨張させて滑りやすくします。</p>
+        </div>
+        <div class="diagram-box">
+          <h4>③ 腸管への刺激作用</h4>
+          <p style="font-size:0.88rem; margin-top:0.4rem;">直腸粘膜への直接刺激と腸管内圧の上昇により、大腸の巨大な収縮運動（蠕動運動）と排便反射を誘発します。</p>
+        </div>
+      </div>
+
+      <div class="diagram-box" style="margin-top: 1.2rem;">
+        <h4>【図解】50%グリセリン液による浸透圧作用と排便促進のイメージ</h4>
+        <svg viewBox="0 0 600 180" style="max-width:100%; height:auto; margin-top:0.5rem;">
+          <rect x="20" y="20" width="560" height="140" rx="12" fill="#ffebee" stroke="#ef9a9a" stroke-width="2"/>
+          <rect x="20" y="50" width="560" height="80" fill="#fff8e1" stroke="#ffb74d" stroke-width="2"/>
+          <text x="40" y="40" fill="#c62828" font-size="13" font-weight="bold">直腸粘膜・毛細血管側（体液）</text>
+          <text x="40" y="150" fill="#c62828" font-size="13" font-weight="bold">直腸粘膜・毛細血管側（体液）</text>
+          <ellipse cx="200" cy="90" rx="70" ry="25" fill="#4fc3f7" opacity="0.85"/>
+          <text x="150" y="95" fill="#01579b" font-size="13" font-weight="bold">50%グリセリン液</text>
+          <circle cx="380" cy="90" r="28" fill="#8d6e63"/>
+          <text x="360" y="95" fill="#fff" font-size="12" font-weight="bold">硬い便塊</text>
+          <!-- Arrows -->
+          <path d="M180 35 L180 62" stroke="#0277bd" stroke-width="3" marker-end="url(#arrow)"/>
+          <path d="M220 145 L220 118" stroke="#0277bd" stroke-width="3"/>
+          <text x="245" y="75" fill="#0277bd" font-size="12" font-weight="bold">水分移動（浸透圧）＋粘膜刺激 ➔ 蠕動亢進・軟化！</text>
+        </svg>
+        <p class="caption">※ウサギを用いた実証研究（武田ら, 2010）では、注入後わずか<strong>16秒〜1分20秒</strong>で排便が誘発され、1〜3分間の留置で便の重量に有意な変化はない（即効性がある）ことが報告されています。</p>
+      </div>
+    </div>
+
+    <!-- 第1章 まとめ -->
+    <div class="summary-box">
+      <h3>📌 第1章のまとめ</h3>
+      <ul>
+        <li>グリセリン浣腸は<strong>50%グリセリン液</strong>を用い、浸透圧作用・便の軟化作用・腸管刺激作用によって排便を促す。</li>
+        <li>動物実験により<strong>極めて高い即効性（1分前後）</strong>と持続性が証明されており、無理に長時間我慢させる必要はない。</li>
+        <li>身体的侵襲を伴うため、術前や分娩前などのルーチン実施は見直され、適応を慎重に判断する時代となっている。</li>
+      </ul>
+    </div>
+
+    <!-- 第1章 用語説明 -->
+    <div class="card">
+      <h3>📖 用語説明（クリックして開閉）</h3>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">グリセリン浣腸（GE：Glycerin Enema） <span>＋</span></button>
+        <div class="glossary-content">日本薬局方に収載されている50%濃度のグリセリン液を直腸内に注入し、排便を促進する医療・看護処置。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">浸透圧作用（しんとうあつさよう） <span>＋</span></button>
+        <div class="glossary-content">濃度の低い溶液（体液）から濃度の高い溶液（50%グリセリン液）へと半透膜（腸管粘膜）を介して水分が移動する現象。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">腸蠕動（ちょうぜんどう） <span>＋</span></button>
+        <div class="glossary-content">腸管の平滑筋が収縮と弛緩を繰り返し、内容物（便）を肛門側へと送り出す運動。</div>
+      </div>
+    </div>
+
+    <!-- 第1章 理解確認テスト -->
+    <div class="quiz-box">
+      <h3>📝 第1章：理解確認テスト</h3>
+      
+      <div class="quiz-item" data-qid="q1_1">
+        <p class="quiz-q">Q1-1. 日本薬局方に定められているグリセリン浣腸液の標準的な濃度はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q1_1', false, '10%グリセリン液は脳浮腫治療などの点滴静注用として用いられる濃度です。')">A. 10%</button>
+          <button class="quiz-opt" onclick="checkQuiz('q1_1', true, '正解！日本薬局方では「50%液を10〜150mL浣腸剤として用いる」と規定されています。')">B. 50%</button>
+          <button class="quiz-opt" onclick="checkQuiz('q1_1', false, '100%ではありません。標準濃度は50%です。')">C. 100%</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q1_1"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q1_2">
+        <p class="quiz-q">Q1-2. グリセリン浣腸に関する近年の研究動向や作用機序として正しいものはどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q1_2', false, '近年の比較試験では、術前・分娩前のルーチン実施は不要とされる傾向にあります。')">A. すべての開腹手術や分娩の前に必ず実施することが推奨されている。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q1_2', true, '正解！ウサギを用いた実験（武田ら, 2010）でも即効性と腸管刺激・便軟化作用が確認されています。')">B. 浸透圧による水分移動・腸管刺激・便の軟化作用を持ち、注入後速やかに効果が現れる。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q1_2', false, '15分以上我慢させても効果が高まる科学的根拠はなく、無理な我慢は不要です。')">C. 注入後15分以上我慢しないと便を軟化させる効果は全く得られない。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q1_2"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q1_3">
+        <p class="quiz-q">Q1-3. 2005年に厚生労働省から「市販のディスポーザブルグリセリン浣腸器を用いた浣腸は原則として医療行為ではない」と通知されたが、看護職が持つべき認識として適切なのはどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q1_3', false, '誤りです。直腸穿孔や溶血などの重篤な有害事象が多数報告されています。')">A. 誰でも安全にできる処置なので、事前の観察やアセスメントは省略してよい。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q1_3', true, '正解！身体的侵襲が強く、重篤な合併症を伴うため、エビデンスに基づいたアセスメントと安全な手技が不可欠です。')">B. 直腸穿孔や溶血・腎不全などの重篤な有害事象リスクがある侵襲的技術として慎重に実施する。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q1_3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第2章 ==================== -->
+  <section id="ch2" class="chapter-section">
+    <div class="chapter-header">
+      <span class="chapter-badge">Chapter 2</span>
+      <h2>なぜ危険？有害事象の実態と2大発症メカニズム</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. グリセリン浣腸の医療事故発生状況と「緊急安全情報」</h3>
+      <p>
+        グリセリン浣腸による有害事象は、2006年〜2021年の間だけでも<strong>113例の症例報告</strong>（医学中央雑誌調査）があり、決して稀な事故ではありません。2006年2月には日本看護協会より<strong>「緊急安全情報：立位によるグリセリン浣腸実施の事故報告」</strong>が通達されました。
+      </p>
+
+      <div class="alert alert-danger">
+        <strong>🚨 なぜ「立位・立位前屈・中腰」での実施は絶対禁忌なのか？（ソース図の再現解説）</strong><br>
+        立位や前屈姿勢では、①<strong>肛門部が十分に目視できず</strong>不安定でカテーテルが過挿入になりやすいこと、②上体からの<strong>強い「腹圧」と体重</strong>がかかることで直腸前壁がカテーテル先端に強く押し付けられ、<strong>直腸損傷・直腸穿孔を起こす危険性が極めて高い</strong>ため禁忌です。
+      </div>
+
+      <div class="grid-2" style="margin-top:1.2rem;">
+        <div class="diagram-box">
+          <h4>【ソース引用データ】有害事象患者の既往疾患（武田ら, 2006）</h4>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <div class="bar-label">便秘症</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 44%;">44%</div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">痔核（いぼ痔）</div>
+              <div class="bar-track"><div class="bar-fill danger" style="width: 26%;">26%</div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">高血圧・心疾患</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 18%;">18%</div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">腎不全・透析等</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 12%;">12%</div></div>
+            </div>
+          </div>
+          <p class="caption">※消化器系疾患（とくに便秘症・内痔核・直腸潰瘍など）を持つ患者は粘膜が脆弱で出血・血中移行を起こしやすい特徴があります（栗田ら, 2010）。</p>
+        </div>
+
+        <div class="diagram-box">
+          <h4>【ソース引用データ】実施後に認められた主な症状（武田ら, 2006）</h4>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <div class="bar-label">血尿・血色素尿</div>
+              <div class="bar-track"><div class="bar-fill danger" style="width: 85%;">最多報告</div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">肛門出血・下血</div>
+              <div class="bar-track"><div class="bar-fill danger" style="width: 75%;">多数</div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">肛門痛・腹痛</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 60%;">中程度</div></div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">発熱・悪寒・嘔吐</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 45%;">中程度</div></div>
+            </div>
+          </div>
+          <p class="caption">※自覚症状がなくても「血色素尿（コーラ色・黒色尿）」や「下血」などの身体症状で発見されるケースが多くあります。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. 有害事象の2大発症メカニズム</h3>
+      <p>
+        直腸粘膜は<strong>「単層円柱上皮」</strong>というわずか1層の細胞でできており、皮膚や肛門管（重層扁平上皮）に比べて物理的刺激に極めて弱い構造をしています。ここから以下の2つのルートで重症化します。
+      </p>
+
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="alert alert-danger" style="margin:0;">
+          <h4>ルート①：血管内移行による「溶血・急性腎不全」</h4>
+          <ol style="padding-left:1.2rem; margin-top:0.5rem; font-size:0.92rem;">
+            <li>カテーテルや硬便で<strong>直腸粘膜や痔核が損傷</strong>する。</li>
+            <li>損傷した血管内へ高濃度の<strong>50%グリセリン液が流入</strong>する。</li>
+            <li>急激な浸透圧変化により赤血球膜が破壊され<strong>「溶血」</strong>が起こる。</li>
+            <li>壊れた赤血球からヘモグロビンが流出し、<strong>血色素尿（褐色〜黒色尿）</strong>が出現。</li>
+            <li>遊離ヘモグロビンが腎臓の尿細管を閉塞・障害し、<strong>急性腎不全</strong>に至る。</li>
+          </ol>
+        </div>
+
+        <div class="alert alert-warning" style="margin:0;">
+          <h4>ルート②：カテーテルによる「直腸穿孔・腹膜炎」</h4>
+          <ol style="padding-left:1.2rem; margin-top:0.5rem; font-size:0.92rem;">
+            <li>不適切な挿入長や無理な挿入により、<strong>直腸壁を突き破る（直腸穿孔）</strong>。</li>
+            <li>グリセリン液が腸管外（後腹膜腔や直腸周囲組織）へ注入・停留する。</li>
+            <li>組織の壊死、直腸周囲膿瘍、または<strong>便汁が腹腔内に流出</strong>する。</li>
+            <li>重篤な<strong>汎発性腹膜炎・敗血症・DIC（播種性血管内凝固）</strong>を引き起こす。</li>
+            <li>人工肛門（ストーマ）造設や集中治療が必要となり、命に関わる。</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="table-wrapper" style="margin-top:1.4rem;">
+        <h4>【ソース引用】実際に起きた有害事象の典型事例（日本看護技術学会 Q&A・武田ら 2006より）</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>事例</th>
+              <th>状況と実施方法</th>
+              <th>発生した有害事象と経過</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>事例A</strong><br>（70代女性・術前）</td>
+              <td>手術前処置として50%GE液120mLを<strong>中腰の体位</strong>で実施。注入時に疼痛・少量の出血・気分不快あり。</td>
+              <td>4時間後の麻酔導入時、導尿にて<strong>約80mLの黒色尿（溶血・血色素尿）</strong>が流出。手術は中止となり、血漿交換とハプトグロビン投与を実施（河口ら, 2000）。</td>
+            </tr>
+            <tr>
+              <td><strong>事例B</strong><br>（嵌頓痔核患者）</td>
+              <td>内痔核・嵌頓痔核がある患者にGEを実施し、損傷部から腸管外・血管内へ薬液が注入された。</td>
+              <td>激しい溶血から<strong>急性腎不全</strong>を発症し、血液透析等の集中治療を要した（萩原ら, 2017）。</td>
+            </tr>
+            <tr>
+              <td><strong>事例C</strong><br>（直腸穿孔例）</td>
+              <td>便秘改善目的でGEを実施。カテーテル先端が直腸壁を損傷・穿孔。</td>
+              <td>直腸穿孔および後腹膜気腫・直腸周囲膿瘍を発症し、長期の絶食・抗菌薬治療または人工肛門造設に至った（大川ら, 2017ほか）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 第2章 まとめ -->
+    <div class="summary-box">
+      <h3>📌 第2章のまとめ</h3>
+      <ul>
+        <li>グリセリン浣腸の有害事象は<strong>①血管内流入による「溶血・血色素尿・急性腎不全」</strong>と、<strong>②カテーテルによる「直腸穿孔・腹膜炎」</strong>の2つに大別される。</li>
+        <li>直腸粘膜は<strong>単層円柱上皮</strong>であり傷つきやすく、特に<strong>痔核や消化器疾患、便秘症</strong>の患者はハイリスクである。</li>
+        <li><strong>立位・中腰での実施</strong>は腹圧がかかり直腸損傷・穿孔を起こすため<strong>絶対禁忌</strong>である（2006年 日本看護協会 緊急安全情報）。</li>
+      </ul>
+    </div>
+
+    <!-- 第2章 用語説明 -->
+    <div class="card">
+      <h3>📖 用語説明（クリックして開閉）</h3>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">溶血（ようけつ）と血色素尿（けっしきそにょう） <span>＋</span></button>
+        <div class="glossary-content">赤血球の膜が壊れて中のヘモグロビン（血色素）が血液中に流れ出る現象が「溶血」。それが尿中に排泄されて尿が赤褐色〜黒色になる状態が「血色素尿」であり、腎不全の引き金となる。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">直腸穿孔（ちょくちょうせんこう） <span>＋</span></button>
+        <div class="glossary-content">直腸の壁に穴が開くこと。便や浣腸液が腸の外（腹腔や後腹膜）に漏れ出し、重篤な腹膜炎や敗血症を引き起こす。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">単層円柱上皮（たんそうえんちゅうじょうひ） <span>＋</span></button>
+        <div class="glossary-content">直腸粘膜を覆う上皮組織。細胞が1層しか並んでいないため吸収や粘液分泌に適している反面、摩擦やカテーテル接触などの物理的刺激で容易に傷つく。</div>
+      </div>
+    </div>
+
+    <!-- 第2章 理解確認テスト -->
+    <div class="quiz-box">
+      <h3>📝 第2章：理解確認テスト</h3>
+
+      <div class="quiz-item" data-qid="q2_1">
+        <p class="quiz-q">Q2-1. 50%グリセリン浣腸液が直腸粘膜の損傷部から血管内に流入した際に起こる病態はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q2_1', true, '正解！高張なグリセリン液が血中に入ると赤血球が破壊（溶血）され、血色素尿や急性腎不全を引き起こします。')">A. 溶血・血色素尿・急性腎不全</button>
+          <button class="quiz-opt" onclick="checkQuiz('q2_1', false, '誤りです。血管内流入で特徴的に起こるのは赤血球の溶血とそれに伴う腎障害です。')">B. 血糖値の急激な低下による低血糖昏睡</button>
+          <button class="quiz-opt" onclick="checkQuiz('q2_1', false, '誤りです。')">C. 腸管内の水分がすべて血管内に吸収されることによる高度の便秘</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q2_1"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q2_2">
+        <p class="quiz-q">Q2-2. 2006年に日本看護協会から出された「緊急安全情報」において、直腸穿孔や溶血の危険が高いため行ってはならない（禁忌）と警告された体位はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q2_2', false, '左側臥位はグリセリン浣腸における第一選択の推奨体位です。')">A. 左側臥位（シムス位）</button>
+          <button class="quiz-opt" onclick="checkQuiz('q2_2', true, '正解！立位や前屈・中腰姿勢は肛門が目視できず、腹圧により直腸壁がカテーテルに押し付けられるため禁忌です。')">B. 立位・立位前屈・中腰</button>
+          <button class="quiz-opt" onclick="checkQuiz('q2_2', false, '左側臥位が困難な場合は、肛門が目視できる安定した右側臥位も選択肢となります。')">C. 右側臥位</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q2_2"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q2_3">
+        <p class="quiz-q">Q2-3. 直腸粘膜がカテーテルや硬便の刺激によって傷つきやすい解剖学的な理由はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q2_3', false, '角化した重層扁平上皮は皮膚であり、摩擦に強い構造です。')">A. 角化した分厚い重層扁平上皮で覆われているため</button>
+          <button class="quiz-opt" onclick="checkQuiz('q2_3', true, '正解！直腸粘膜は「単層円柱上皮」という1層の細胞層であり、物理的刺激に非常に脆弱です。')">B. 物理的刺激に弱い「単層円柱上皮」で構成されているため</button>
+          <button class="quiz-opt" onclick="checkQuiz('q2_3', false, '直腸粘膜には豊富な血管網が存在するため、傷つくと容易に出血・血中移行します。')">C. 血管が全く存在しない組織であるため</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q2_3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第3章 ==================== -->
+  <section id="ch3" class="chapter-section">
+    <div class="chapter-header">
+      <span class="chapter-badge">Chapter 3</span>
+      <h2>実施前のアセスメントと「新規看護実践フロー」</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. 浣腸前に必ず確認すべき3つのポイント（Q1〜Q3）</h3>
+      <p>
+        グリセリン浣腸と摘便を漫然と併用すると、摘便や硬便で傷ついた粘膜にグリセリン液が曝露し、<strong>溶血のリスクが跳ね上がります</strong>（平野ら, 2002）。実施前には必ず以下のアセスメントを行います。
+      </p>
+
+      <div class="grid-3" style="margin-top:1rem;">
+        <div class="alert alert-info" style="margin:0;">
+          <h4>① ハイリスク患者の確認</h4>
+          <ul style="padding-left:1.1rem; font-size:0.88rem; margin-top:0.4rem;">
+            <li>内痔核・外痔核・裂肛がある</li>
+            <li>大腸炎・直腸潰瘍など消化器疾患</li>
+            <li>ステロイド薬や抗凝固薬の服用中</li>
+            <li>高齢者・長期臥床（粘膜血流低下）</li>
+          </ul>
+        </div>
+        <div class="alert alert-warning" style="margin:0;">
+          <h4>② 直腸診（触診）の実施</h4>
+          <p style="font-size:0.88rem; margin-top:0.4rem;">
+            カテーテル挿入前に、実施者が<strong>示指で直腸診</strong>を行います。<br>
+            ・直腸内に便があるか？<br>
+            ・<strong>便を指で押して容易に変形するか（硬便ではないか）？</strong><br>
+            ・出血や痔核はないか？
+          </p>
+        </div>
+        <div class="alert alert-danger" style="margin:0;">
+          <h4>③ 絶対に見合わせる基準（基準⑥）</h4>
+          <p style="font-size:0.88rem; margin-top:0.4rem;">
+            以下の場合は<strong>グリセリン浣腸を実施しません</strong>（栗田・武田, 2024）。<br>
+            ・<strong>収縮期血圧100mmHg未満</strong>など循環動態に問題がある<br>
+            ・<strong>出血、便や指への血液付着、粘膜損傷（疑い含む）</strong>がある
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. 【インタラクティブ体験】有害事象を回避する新規看護実践フロー（栗田・武田, 2024）</h3>
+      <p>
+        論文『在宅要介護高齢者のグリセリン浣腸による有害事象を回避し排便を促進する新規看護実践フローの提案（日本看護技術学会誌, 2024）』の図1に基づき、患者の状態に合わせて<strong>「経過観察」「摘便」「グリセリン浣腸」のどれを選択すべきか</strong>をシミュレーションできます。
+      </p>
+
+      <div class="flow-sim" id="flow-simulator">
+        <div class="flow-question" id="flow-q">【スタート】まず「温罨法と腹部マッサージ」を実施しました。<br>続いて【基準①】直腸診で直腸内に便が触れますか？</div>
+        <div class="flow-btns" id="flow-btns">
+          <button class="btn btn-yes" onclick="nextFlow('q4')">Yes（便が触れる）</button>
+          <button class="btn btn-no" onclick="nextFlow('q2')">No（便が触れない）</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper" style="margin-top:1.4rem;">
+        <h4>【ソース引用】便の性状に応じた3種類の摘便と終了の判断基準（栗田・武田, 2024）</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>区分</th>
+              <th>対象となる便の硬さ</th>
+              <th>具体的な手技と併用ケア</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>摘便 Ⅰ</strong></td>
+              <td>指をすり抜けない硬めの便<br>（指で押しても容易に変形しない）</td>
+              <td><strong>GEは行わず</strong>、指腹で便を捉えて出す（＋腹部圧迫）。<br>※肛門付近の硬便を出した後、奥の便が軟らかく出血や低血圧がなければGEを検討可。次回に向け<strong>浸透圧性下剤（塩類下剤）</strong>を検討。</td>
+            </tr>
+            <tr>
+              <td><strong>摘便 Ⅱ</strong></td>
+              <td>指をすり抜ける軟らかさの便</td>
+              <td>GE実施後の残便に対し、<strong>指の背に便を乗せて</strong>肛門側に押し出す（＋直腸刺激＋腹部圧迫）。</td>
+            </tr>
+            <tr>
+              <td><strong>摘便 Ⅲ</strong></td>
+              <td>泥状〜水様便</td>
+              <td>GE実施後の残便に対し、<strong>肛門を指で押し広げて</strong>直腸内圧により便を流し出す（＋直腸刺激＋腹部圧迫）。</td>
+            </tr>
+            <tr>
+              <td><strong>終了の判断※</strong></td>
+              <td>介入終了の5条件</td>
+              <td>ⅰ.直腸診で便が触れなくなった、ⅱ.直腸内腔が狭くなった、ⅲ.出た便の量が十分（栄養十分なら片手1杯以上が目安）、ⅳ.腹部症状・残便感がない、ⅴ.腹部膨満や硬い塊が軽減した。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 第3章 まとめ -->
+    <div class="summary-box">
+      <h3>📌 第3章のまとめ</h3>
+      <ul>
+        <li>硬便がある状態でグリセリン浣腸を行うと粘膜損傷・溶血・穿孔のリスクが高いため、<strong>直腸診で「指で押しても容易に変形しない硬便」があれば、浣腸ではなく『摘便Ⅰ』と浸透圧性下剤を選択する</strong>。</li>
+        <li>グリセリン浣腸の実施直前には必ず<strong>①循環動態（収縮期血圧100mmHg未満でないか）</strong>と<strong>②出血・血液付着・粘膜損傷の有無</strong>を確認し、1つでも当てはまれば浣腸は実施しない。</li>
+        <li>直腸診が困難な対象者には、<strong>エコー（超音波検査）</strong>を用いて直腸内の便貯留や硬便の有無を確認する方法も有効である。</li>
+      </ul>
+    </div>
+
+    <!-- 第3章 用語説明 -->
+    <div class="card">
+      <h3>📖 用語説明（クリックして開閉）</h3>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">直腸診（ちょくちょうしん）／直腸指診 <span>＋</span></button>
+        <div class="glossary-content">手袋を装着し潤滑剤を塗布した示指（人差し指）を肛門から直腸へ挿入し、便の有無・硬さ・直腸の走行・腫瘤や出血の有無を触診するアセスメント技術。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">浸透圧性下剤（塩類下剤）と刺激性下剤 <span>＋</span></button>
+        <div class="glossary-content">酸化マグネシウムなどの「浸透圧性下剤」は腸管内に水分を集めて便を軟らかくする第一選択薬。センノシドなどの「刺激性下剤」は大腸の蠕動を促すが、耐性や電解質異常を防ぐため頓用・短期間での使用が望ましい。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">直腸刺激（ちょくちょうしげき） <span>＋</span></button>
+        <div class="glossary-content">指を直腸内に挿入して直腸壁を優しく刺激することで排便反射と腸蠕動波を誘発する方法。硬便塊がある場合は粘膜損傷リスクがあるため、軟らかい便（摘便Ⅱ・Ⅲ）と組み合わせて行う。</div>
+      </div>
+    </div>
+
+    <!-- 第3章 理解確認テスト -->
+    <div class="quiz-box">
+      <h3>📝 第3章：理解確認テスト</h3>
+
+      <div class="quiz-item" data-qid="q3_1">
+        <p class="quiz-q">Q3-1. 直腸診を行ったところ、直腸内に「指で押しても容易に変形しない硬い便塊」が触れた。新規看護実践フロー（栗田・武田, 2024）に基づく最初の対応として最も適切なのはどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q3_1', false, '硬便が充満している状態でGEを行うと、粘膜損傷・溶血や直腸穿孔の危険性が高く不適切です。')">A. 硬い便を溶かすために、すぐに高圧でグリセリン浣腸を実施する。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q3_1', true, '正解！硬便時は粘膜損傷リスクが高いため、まずGEは避けて肛門付近の便の「摘便Ⅰ」を行い、浸透圧性下剤の使用も検討します。')">B. グリセリン浣腸は行わず、まず肛門付近の便に対して「摘便Ⅰ（指腹で捉えて出す）」を実施する。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q3_1', false, '直腸内に便が貯留しているため、放置すると宿便性潰瘍や穿孔のリスクがあります。')">C. 何もせず1週間後に再観察する。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q3_1"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q3_2">
+        <p class="quiz-q">Q3-2. 看護実践フローの「基準⑥」において、グリセリン浣腸の実施を中止（実施しない）すべき基準はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q3_2', true, '正解！収縮期血圧100mmHg未満などの循環動態の問題や、直腸診での血液付着・粘膜損傷がある場合はGEを実施しません。')">A. 収縮期血圧が100mmHg未満、または直腸診の示指に血液付着・粘膜損傷の疑いがある。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q3_2', false, '泥状〜水様便や軟便で自力排出困難な場合は、基準⑥に問題がなければGEや摘便の適応となります。')">B. 直腸内の便が軟らかく、指で押すと容易に変形する。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q3_2', false, '腹部膨満や濁音がある場合は便が貯留しているため、排便促進ケアの適応となります。')">C. 腹部の打診で濁音があり、触診で腹部膨満がある。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q3_2"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q3_3">
+        <p class="quiz-q">Q3-3. 便が硬い排便困難型便秘の対象者に対し、便を軟化させる目的で第一選択として推奨される下剤はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q3_3', true, '正解！便が硬い場合はまず浸透圧性下剤（塩類下剤）で便性状を軟化させ、それでも排出困難な場合に刺激性下剤を頓用します。')">A. 浸透圧性下剤（酸化マグネシウムなどの塩類下剤）</button>
+          <button class="quiz-opt" onclick="checkQuiz('q3_3', false, '刺激性下剤は長期連用で耐性や電解質異常を起こしやすいため、まずは浸透圧性下剤で便を軟化させます。')">B. 刺激性下剤の大量長期連用</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q3_3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第4章 ==================== -->
+  <section id="ch4" class="chapter-section">
+    <div class="chapter-header">
+      <span class="chapter-badge">Chapter 4</span>
+      <h2>安全な実施手順（Q&A）と8つのトラブル予防</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. 解剖学的エビデンスから見る「安全な挿入長（4.1〜4.5cm）」</h3>
+      <p>
+        「カテーテルは何cm挿入するのが安全か？」という疑問に対し、有害事象事例の損傷部位を調査した研究（栗田ら, 2010）では、<strong>肛門縁から5.1〜5.5cmの部分（下部直腸：Rb下部）に最も多く損傷が集中</strong>していました。また、成人下部消化管造影画像を用いた研究（春田ら, 2011）でも5cm未満の挿入が推奨されています。
+      </p>
+
+      <div class="diagram-box" style="margin-top:1rem;">
+        <h4>【ソース図1再現】肛門縁からの距離と下部直腸部（Rb）の損傷件数（栗田ら, 2010）</h4>
+        <div class="grid-2" style="align-items: center; text-align:left; margin-top:0.8rem;">
+          <div>
+            <div class="bar-chart">
+              <div class="bar-row"><div class="bar-label">8.6〜9.0 cm (Rb上部)</div><div class="bar-track"><div class="bar-fill" style="width:40%;">4件</div></div></div>
+              <div class="bar-row"><div class="bar-label">8.1〜8.5 cm (Rb上部)</div><div class="bar-track"><div class="bar-fill" style="width:50%;">5件</div></div></div>
+              <div class="bar-row"><div class="bar-label">7.6〜8.0 cm (Rb上部)</div><div class="bar-track"><div class="bar-fill danger" style="width:80%;">8件（集中！）</div></div></div>
+              <div class="bar-row"><div class="bar-label">7.1〜7.5 cm (Rb上部)</div><div class="bar-track"><div class="bar-fill" style="width:60%;">6件</div></div></div>
+              <div class="bar-row"><div class="bar-label">6.1〜7.0 cm (Rb上部)</div><div class="bar-track"><div class="bar-fill" style="width:50%;">各5件</div></div></div>
+              <div class="bar-row"><div class="bar-label">5.6〜6.0 cm (Rb上部)</div><div class="bar-track"><div class="bar-fill danger" style="width:70%;">7件</div></div></div>
+              <div class="bar-row"><div class="bar-label"><strong>5.1〜5.5 cm (Rb下部)</strong></div><div class="bar-track"><div class="bar-fill danger" style="width:100%;">10件（最多損傷部位！）</div></div></div>
+              <div class="bar-row"><div class="bar-label">4.6〜5.0 cm (Rb下部)</div><div class="bar-track"><div class="bar-fill danger" style="width:70%;">7件</div></div></div>
+              <div class="bar-row"><div class="bar-label"><strong>4.1〜4.5 cm (推奨域)</strong></div><div class="bar-track"><div class="bar-fill" style="width:30%; background:#2e7d32;">3件（最小）</div></div></div>
+            </div>
+          </div>
+          <div style="background:#fff; padding:1rem; border-radius:8px; border:1px solid var(--border); font-size:0.9rem;">
+            <h5 style="color:var(--primary-dark); margin-bottom:0.5rem;">🔍 解剖学的ポイント</h5>
+            <ul style="padding-left:1.2rem;">
+              <li><strong>0〜約3cm（肛門管部〜歯状線）</strong>：重層扁平上皮で保護されているが、括約筋があり薬液が漏れやすい。</li>
+              <li><strong>約4〜5cm（肛門直腸線〜Rb下部）</strong>：直腸膨大部に入り始める位置。<strong>ストッパーは「4.1〜4.5cm（最大でも5cm未満）」</strong>に合わせる！</li>
+              <li><strong>5cm以上（Houston弁・直腸前壁）</strong>：直腸が仙骨に沿って後方へ曲がるため、5cm以上入れるとカテーテル先端が直腸前壁やヒューストン弁（横ひだ）に突き当たり穿孔・損傷が多発します。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. グリセリン浣腸 安全実施Q&Aチェックリスト（日本看護技術学会 Q&A）</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>推奨される安全な実施方法（エビデンス）</th>
+              <th>避けるべき危険な手技（NG）</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Q4. 薬液の温度</strong></td>
+              <td><strong>40℃前後（39〜41℃）</strong>に湯煎等で加温する。直腸温に近い温度で腸管の過度な攣縮や血圧変動を防ぐ。</td>
+              <td>冷たいまま注入する、または高温のまま注入する（粘膜熱傷の危険）。手の感覚だけで温度を測らない。</td>
+            </tr>
+            <tr>
+              <td><strong>Q5/Q8. 挿入の長さとストッパー</strong></td>
+              <td>可動式ストッパーを<strong>「4.1〜4.5cm（5cm未満）」</strong>の位置にしっかり固定する。</td>
+              <td>ストッパーを設定せず6cm以上深く挿入する。また、抜去時にストッパーが肛門内に残存しないよう注意する。</td>
+            </tr>
+            <tr>
+              <td><strong>Q6. 実施時の体位</strong></td>
+              <td><strong>左側臥位（またはシムス位）</strong>。困難な場合は右側臥位など体位が安定し、<strong>必ず肛門部が目視できる体位</strong>にする。</td>
+              <td><strong>立位・立位前屈・中腰（絶対禁忌）</strong>。肛門が見えない状態での盲目的挿入。</td>
+            </tr>
+            <tr>
+              <td><strong>Q7. 潤滑剤の選択</strong></td>
+              <td><strong>水溶性潤滑剤（ヌルゼリー®、リューブゼリー®等）</strong>が第一選択。ない場合は<strong>ベビーオイル</strong>で代用可。</td>
+              <td><strong>キシロカインゼリー（ショックの危険があるため避ける）</strong>。グリセリン浣腸液自体を潤滑剤代わりにするのも避ける。</td>
+            </tr>
+            <tr>
+              <td><strong>Q9. 注入量と注入速度</strong></td>
+              <td>必要最小限の量（成人で30〜60mL程度から調整）とし、<strong>50mLあたり15秒以上かけてゆっくり注入</strong>する。片手でストッパーまたはカテーテルを固定して注入する。</td>
+              <td>一気に強く押し込む（直腸壁へのジェット水流刺激や逆流・穿孔のリスク）。抵抗があるのに無理に注入する。</td>
+            </tr>
+            <tr>
+              <td><strong>抜去と排便誘導</strong></td>
+              <td>ティッシュで肛門を押さえて抜き、<strong>カテーテル先端に血液付着がないか確認</strong>する。<strong>無理に我慢させず、便意があればすぐ排便してよい</strong>と伝える。</td>
+              <td>「5〜10分間絶対に我慢してください」と無理に我慢させる（過度な怒責や血圧変動・苦痛の原因となる）。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3. 看護roo! 解説：起こり得る「8つのトラブル」と予防策</h3>
+      <div class="grid-2">
+        <div class="alert alert-info" style="margin:0;">
+          <strong>① ストッパーの肛門内残存</strong>：挿入時にストッパーが外れて直腸内に残る事故。挿入中は挿入していない方の手でストッパーを固定する。<br>
+          <strong>② チューブが入らない</strong>：便塊や痔核、括約筋収縮が原因。抵抗を感じたら絶対に無理に押し込まず一旦抜去する。<br>
+          <strong>③ 薬液の漏出</strong>：挿入が浅すぎるか注入速度が速すぎることが原因。4〜4.5cm挿入しゆっくり注入する。<br>
+          <strong>④ 便失禁</strong>：即効性があるため、ベッドサイドにポータブルトイレを用意するか、すぐにトイレへ行ける環境を整えてから実施する。
+        </div>
+        <div class="alert alert-danger" style="margin:0;">
+          <strong>⑤ 腸粘膜損傷</strong>：単層円柱上皮の損傷。抜去後のカテーテル血液付着を見逃さない。<br>
+          <strong>⑥ 迷走神経反射（血圧低下・徐脈）</strong>：直腸刺激や排便時の急激な腹圧低下で生じる。冷汗・顔面蒼白に注意。<br>
+          <strong>⑦ 直腸穿孔</strong>：過挿入や立位実施で発生。激しい腹痛や反跳痛が出現。<br>
+          <strong>⑧ 溶血・急性腎不全</strong>：粘膜損傷部からのグリセリン血中移行。実施後〜翌日の血尿（黒色尿・コーラ色尿）を観察。
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>4. 🎥 動画で学ぶ：グリセリン浣腸の看護技術（YouTube解説動画）</h3>
+      <p>実際の手順や声かけ、物品準備、左側臥位のポジショニングを映像で確認しましょう。</p>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/AiRhk8uOR5o" title="グリセリン浣腸の実施 ／ 監修 日本医療大学" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p class="caption">動画出典：看護roo!「グリセリン浣腸の実施 ／ 監修 日本医療大学」（※動画内の挿入長については、最新の日本看護技術学会Q&Aエビデンスに基づき「4.1〜4.5cm（5cm未満）」を推奨基準として実践してください）</p>
+    </div>
+
+    <!-- 第4章 まとめ -->
+    <div class="summary-box">
+      <h3>📌 第4章のまとめ</h3>
+      <ul>
+        <li>安全なグリセリン浣腸の黄金ルール：<strong>「左側臥位で肛門を目視」「水溶性潤滑剤を使用（キシロカインは避ける）」「挿入長は4.1〜4.5cm」「温度は40℃前後」「注入速度は50mL/15秒以上」</strong>。</li>
+        <li>挿入時に抵抗を感じたり、患者が痛みを訴えた場合は<strong>直ちに中止してカテーテルを抜去</strong>する。</li>
+        <li>抜去時はカテーテルに<strong>血液が付着していないか</strong>必ず確認し、無理に我慢させず排便させる。</li>
+      </ul>
+    </div>
+
+    <!-- 第4章 用語説明 -->
+    <div class="card">
+      <h3>📖 用語説明（クリックして開閉）</h3>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">ヒューストン弁（Houston弁） <span>＋</span></button>
+        <div class="glossary-content">直腸内腔にある3つの横ひだ（上・中・下直腸ひだ）。肛門縁から約5〜8cm付近に下・中ヒューストン弁があり、深く挿入したカテーテルの先端が引っかかって損傷・穿孔しやすい部位となる。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">歯状線（しじょうせん） <span>＋</span></button>
+        <div class="glossary-content">肛門縁から約2cm奥にある、直腸粘膜（単層円柱上皮・自律神経支配）と肛門管上皮（重層扁平上皮・体性神経支配）の境界線。内痔核は歯状線より上部に発生する。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">キシロカインショック <span>＋</span></button>
+        <div class="glossary-content">局所麻酔薬であるリドカイン（キシロカイン®）に対するアナフィラキシーショックや中毒症状。直腸粘膜からは薬剤が急速に吸収されやすいため、浣腸の潤滑剤としてキシロカインゼリーを使用することは推奨されない。</div>
+      </div>
+    </div>
+
+    <!-- 第4章 理解確認テスト -->
+    <div class="quiz-box">
+      <h3>📝 第4章：理解確認テスト</h3>
+
+      <div class="quiz-item" data-qid="q4_1">
+        <p class="quiz-q">Q4-1. 文献検討（栗田ら, 2010）において直腸損傷が5.1〜5.5cmで最多であったことから、現在推奨されるカテーテル挿入の長さ（ストッパーの位置）はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q4_1', false, '1〜2cmでは肛門括約筋を越えられず、薬液がそのまま漏出してしまいます。')">A. 1.0〜2.0cm</button>
+          <button class="quiz-opt" onclick="checkQuiz('q4_1', true, '正解！肛門括約筋を越え、かつ損傷が多発する5.0cm以上に達しない「4.1〜4.5cm（5cm未満）」が最も安全です。')">B. 4.1〜4.5cm（5cm未満）</button>
+          <button class="quiz-opt" onclick="checkQuiz('q4_1', false, '7.6〜8.0cmはRb上部の損傷集中部位であり、過挿入となるため危険です。')">C. 7.5〜9.0cm</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q4_1"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q4_2">
+        <p class="quiz-q">Q4-2. グリセリン浣腸時に使用する潤滑剤についての説明として正しいものはどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q4_2', false, 'キシロカインゼリーはショックを引き起こす危険性があるため避けます。')">A. 痛みを抑えるため、キシロカインゼリーを第一選択とする。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q4_2', true, '正解！水溶性潤滑剤（ヌルゼリーやリューブゼリー等）を第一選択とし、ない場合は疎水性で血液に移行しないベビーオイルも代用可能です。')">B. 水溶性潤滑剤を第一選択とし、準備できない場合はベビーオイルで代用できる。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q4_2', false, '50%グリセリン液を先端に塗ると、挿入時の微小な傷からそのまま血中へ移行し溶血を起こすリスクがあるため推奨されません。')">C. グリセリン浣腸液を少し押し出してカテーテルに塗るのが最も安全である。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q4_2"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q4_3">
+        <p class="quiz-q">Q4-3. グリセリン浣腸液を注入する際の適切な速度と患者への声かけの組み合わせはどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q4_3', false, '急速注入は直腸壁を損傷するリスクがあり、10分間の無理な我慢も不要です。')">A. 50mLを3秒で一気に注入し、「10分間は絶対に我慢してください」と伝える。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q4_3', true, '正解！50mLあたり15秒以上かけてゆっくり注入し、無理に我慢せず便意があればすぐ排便してよいと伝えます。')">B. 50mLあたり15秒以上かけてゆっくり注入し、「無理に我慢せず便意があれば排便してよいですよ」と伝える。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q4_3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 第5章 ==================== -->
+  <section id="ch5" class="chapter-section">
+    <div class="chapter-header">
+      <span class="chapter-badge">Chapter 5</span>
+      <h2>実施中・実施後の観察と緊急時の対応</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. なぜ浣腸で血圧が急変動するのか？（Q10）</h3>
+      <p>
+        グリセリン浣腸の実施から排便にかけて、特に<strong>高齢者、高血圧症、心血管系疾患、自律神経系疾患</strong>を持つ患者では劇的な循環動態の変動が起こります。
+      </p>
+      <div class="diagram-box" style="margin-top:0.8rem;">
+        <h4>【病態生理】排便・怒責（いきみ）に伴う血圧二相性変動と迷走神経反射</h4>
+        <p style="font-size:0.92rem; text-align:left; margin-top:0.5rem;">
+          ① <strong>怒責中（いきんでいる時）</strong>：胸腔内圧・腹腔内圧が上昇し、交感神経が緊張して<strong>血圧が急上昇・脈拍が増加</strong>する（心筋梗塞患者では自然排便よりGE実施時の方が有意に収縮期血圧が上昇）。<br>
+          ② <strong>排便直後（怒責解除後）</strong>：溜まっていた便が排出されて腹圧が急激に下がり、さらに直腸刺激による<strong>迷走神経反射（副交感神経の過剰興奮）</strong>が重なることで、<strong>反跳的に急激な血圧低下・徐脈（脈拍減少）</strong>が起こり、失神・ショック・転倒に至る。
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2. 実施中・実施後に見逃してはいけないサイン一覧（Q11）</h3>
+      <p>
+        有害事象の多くは<strong>「実施直後〜数時間以内」</strong>に出現しますが、血尿（血色素尿）や遅発性の穿孔・膿瘍症状は<strong>「実施後〜翌日（24時間）」</strong>まで出現する可能性があります。自覚症状がない患者でも、以下の4カテゴリーの身体症状を必ず観察します。
+      </p>
+
+      <div class="table-wrapper" style="margin-top:1rem;">
+        <table>
+          <thead>
+            <tr>
+              <th>観察カテゴリー</th>
+              <th>見逃してはいけない具体的なサイン（症状）</th>
+              <th>出現時期の目安と対応</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>① 粘膜損傷のサイン</strong></td>
+              <td>・抜去したカテーテルへの血液付着<br>・<strong>下血・肛門からの出血</strong><br>・肛門部痛、会陰部の疼痛・違和感</td>
+              <td><strong>【直後〜数時間】</strong><br>直ちに注入を中止・バイタル測定。その後の溶血（血尿）の出現を厳重に監視し医師へ報告。</td>
+            </tr>
+            <tr>
+              <td><strong>② 溶血・腎機能障害のサイン</strong></td>
+              <td>・<strong>血尿・血色素尿（赤褐色〜ワイン色〜黒色尿）</strong><br>・尿の混濁<br>・<strong>尿量減少（乏尿）、無尿</strong>、背部痛</td>
+              <td><strong>【直後〜翌日（24時間）】</strong><br>患者・家族にも「明日まで尿が赤や黒っぽくならないか見てください」と指導。出現時はハプトグロビン投与等の緊急処置が必要。</td>
+            </tr>
+            <tr>
+              <td><strong>③ 感染・直腸穿孔のサイン</strong></td>
+              <td>・<strong>反跳痛（お腹を押して離す時に響く痛み）を伴う強い腹痛</strong><br>・肛門・会陰部の腫脹、発赤、熱感<br>・<strong>発熱、悪寒戦慄、嘔気・嘔吐</strong></td>
+              <td><strong>【直後〜数日後】</strong><br>腹膜炎・後腹膜膿瘍・敗血症の兆候。絶飲食とし、直ちに医師へ報告して腹部CT検査等を手配する。</td>
+            </tr>
+            <tr>
+              <td><strong>④ 血圧変動・迷走神経反射のサイン</strong></td>
+              <td>・<strong>気分不快、めまい、ふらつき、あくび</strong><br>・<strong>冷汗、顔面蒼白</strong><br>・<strong>血圧低下、脈拍数減少（徐脈）</strong>、意識消失</td>
+              <td><strong>【実施中〜排便直後】</strong><br>トイレ内での転倒防止のため離れず見守る（またはナースコール確認）。出現時は臥床させて下肢挙上・バイタル測定。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 第5章 まとめ -->
+    <div class="summary-box">
+      <h3>📌 第5章のまとめ</h3>
+      <ul>
+        <li>排便時は怒責による血圧上昇の後、<strong>反跳的な血圧低下と徐脈（迷走神経反射）</strong>が起こりやすいため、トイレでの転倒やショックに注意する。</li>
+        <li>観察の4本柱は<strong>「①粘膜損傷（出血・肛門痛）」「②溶血・腎障害（血色素尿・乏尿）」「③穿孔・感染（反跳痛・発熱）」「④血圧変動（冷汗・顔面蒼白・徐脈）」</strong>。</li>
+        <li>血尿は<strong>実施後〜翌日（24時間）</strong>まで出現する可能性があるため、患者や家族にも尿の色を確認するよう必ず説明する。</li>
+      </ul>
+    </div>
+
+    <!-- 第5章 用語説明 -->
+    <div class="card">
+      <h3>📖 用語説明（クリックして開閉）</h3>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">迷走神経反射（めいそうしんけいはんしゃ） <span>＋</span></button>
+        <div class="glossary-content">直腸への機械的刺激や痛み、排便による急激な腹圧低下などを契機に副交感神経（迷走神経）が過剰に働き、末梢血管の拡張と心拍数の減少（徐脈）が生じて急激な血圧低下・脳貧血（失神）を起こす反応。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">反跳痛（はんちょうつう／Blumberg徴候） <span>＋</span></button>
+        <div class="glossary-content">腹壁を手でゆっくり圧迫し、急に手を離した瞬間に強い痛みを感じる徴候。直腸穿孔などにより腹膜に炎症（腹膜炎）が波及していることを示す重要な危険サイン。</div>
+      </div>
+      <div class="glossary-item">
+        <button class="glossary-title" onclick="toggleGlossary(this)">怒責（どせき） <span>＋</span></button>
+        <div class="glossary-content">排便時に息を止めて腹筋や横隔膜に力を入れ、腹圧を高める動作（いきみ）。</div>
+      </div>
+    </div>
+
+    <!-- 第5章 理解確認テスト -->
+    <div class="quiz-box">
+      <h3>📝 第5章：理解確認テスト</h3>
+
+      <div class="quiz-item" data-qid="q5_1">
+        <p class="quiz-q">Q5-1. グリセリン浣腸後の溶血に伴う「血尿（血色素尿）」の観察期間と患者指導として適切なのはどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q5_1', false, '直後だけでなく、数時間後〜翌日に出現するケースがあるため不十分です。')">A. 排便直後の15分間だけ観察すれば、その後の観察や説明は不要である。</button>
+          <button class="quiz-opt" onclick="checkQuiz('q5_1', true, '正解！血尿は直後〜翌日（24時間）まで出現する可能性があるため、患者自身にも尿の色（赤褐色〜黒色）を確認するよう伝えます。')">B. 実施直後から翌日（24時間）まで出現する可能性があるため、患者にも尿の色の変化を確認するよう説明する。</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q5_1"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q5_2">
+        <p class="quiz-q">Q5-2. グリセリン浣腸による排便直後、高齢患者が「気分が悪い」と訴え、顔面蒼白と冷汗、脈拍数の減少（徐脈）を認めた。最も考えられる病態はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q5_2', true, '正解！直腸刺激や怒責解除後の急激な腹圧低下により迷走神経反射が生じ、血圧低下と徐脈をきたしています。')">A. 迷走神経反射・排便後の急激な血圧低下</button>
+          <button class="quiz-opt" onclick="checkQuiz('q5_2', false, '感染による発熱は直後ではなく数時間〜数日かけて出現し、通常は頻脈を伴います。')">B. 細菌感染による敗血症性発熱</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q5_2"></div>
+      </div>
+
+      <div class="quiz-item" data-qid="q5_3">
+        <p class="quiz-q">Q5-3. グリセリン浣腸実施後、患者が「お腹全体が強く痛む」と訴え、腹部を圧迫して手を離した瞬間に強い痛み（反跳痛）を認めた。まず疑うべき重篤な合併症はどれか？</p>
+        <div class="quiz-options">
+          <button class="quiz-opt" onclick="checkQuiz('q5_3', false, '単なる残便感では反跳痛（腹膜刺激症状）は出現しません。')">A. 正常な腸蠕動による一時的な残便感</button>
+          <button class="quiz-opt" onclick="checkQuiz('q5_3', true, '正解！反跳痛を伴う強い腹痛や発熱は、直腸穿孔および腹膜炎を強く疑う緊急サインです。')">B. 直腸穿孔および腹膜炎</button>
+        </div>
+        <div class="quiz-feedback" id="fb-q5_3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 参考文献・動画セクション ==================== -->
+  <section id="ref" class="chapter-section">
+    <div class="chapter-header">
+      <span class="chapter-badge">References & Media</span>
+      <h2>📚 参考文献・引用資料一覧</h2>
+    </div>
+
+    <div class="card">
+      <h3>1. 本教材の主要構成ソース（ガイドライン・原著論文・専門記事）</h3>
+      <ol style="padding-left:1.5rem; font-size:0.93rem; line-height:1.9;">
+        <li>
+          <strong>日本看護技術学会 技術研究成果検討委員会 浣腸（GE）班（編）</strong>（2023）．『グリセリン浣腸 Q&A（2011年9月初版，2020年11月改訂版Ver.1.0，2023年1月改訂版Ver.2.0）』．一般社団法人日本看護技術学会．（執筆：栗田愛，大久保暢子，片山恵，香春知永，北川那美，武田利明，浪切もり子，道畑恵利，吉井紀子，吉田みつ子）
+        </li>
+        <li>
+          <strong>栗田 愛，武田 利明</strong>（2024）．「在宅要介護高齢者のグリセリン浣腸による有害事象を回避し排便を促進する新規看護実践フローの提案」．『日本看護技術学会誌』，Vol. 23，pp. 105-114．
+        </li>
+        <li>
+          <strong>吉良 いずみ</strong>（2012）．「1983年から2011年の日本におけるグリセリン浣腸に関する文献レビュー」．『日本看護技術学会誌』，Vol. 11, No. 1，pp. 90-97．
+        </li>
+        <li>
+          <strong>栗田 愛，佐藤 好恵，篠崎 惠美子，藤井 徹也，ほか</strong>（2010）．「グリセリン浣腸による損傷部位や有害事象についての文献検討」．『日本看護技術学会誌』，Vol. 9, No. 2，pp. 67-73．
+        </li>
+        <li>
+          <strong>武田 利明，小板橋 喜久代，香春 知永，吉田 みつ子，大久保 暢子，鈴木 美和</strong>（2006）．「特別寄稿：グリセリン浣腸による有害事象の現状と今後の課題」．『日本看護技術学会誌』，Vol. 5, No. 2，pp. 4-11．
+        </li>
+        <li>
+          <strong>看護roo! 編集部（坂本 朝子 編）</strong>（2019）．「意外と怖い『グリセリン浣腸』、直腸穿孔や溶血など起こり得るトラブル8つ｜排便ケアを極める（2）」．看護roo!（株式会社クイック）．
+        </li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>2. ソース内で引用されている主要エビデンス文献</h3>
+      <ul style="padding-left:1.5rem; font-size:0.9rem; line-height:1.8; color:var(--text-muted);">
+        <li>日本看護協会（2006）．『緊急安全情報：立位によるグリセリン浣腸実施の事故報告』．</li>
+        <li>平野昭彦，武田利明，菊池和子（2002）．「グリセリン浣腸の安全性に関する文献調査研究―血色素尿あるいは溶血を起こした症例について」．『岩手県立大学看護学部紀要』，4，97-103．</li>
+        <li>武田利明，石田陽子，川島みどり（2003）．「グリセリン浣腸液と溶血に関するラットを用いた実験的研究―静脈内投与による溶血誘発について―」．『日本看護研究学会雑誌』，26(4)，81-88．</li>
+        <li>武田利明（2006）．「グリセリン浣腸による溶血誘発に関する実験動物を用いた実証的研究」．『日本看護技術学会誌』，5(1)，45-50．</li>
+        <li>武田利明，及川正広，小山奈都子（2010）．「グリセリン浣腸の作用に関する実証的研究」．『岩手県立大学看護学部紀要』，12，95-100．</li>
+        <li>香春知永，大久保暢子，小板橋喜久代，吉田みつ子，鈴木美和，武田利明（2007）．「臨床およびテキストからみたグリセリン浣腸の実施方法の現状と課題」．『日本看護技術学会誌』，6(2)，34-44．</li>
+        <li>春田佳代，山幡朗子，篠田かおる，ほか（2011）．「安全な浣腸カテーテル挿入の長さ：成人下部消化管造影画像を用いての検討」．『日本看護研究学会雑誌』，34(5)，71-75．</li>
+        <li>勝川拓也，平野嘉大，吉田みつ子，香春知永，大久保暢子，武田利明，米田隆志（2013）．「グリセリン浣腸製剤のチューブの柔軟性に関する基礎研究」．『第1回看護理工学会学術集会』．</li>
+        <li>栗田愛，武田利明（2023）．「在宅要介護高齢者に対して看護師が実践するグリセリン浣腸と摘便に関するアセスメントのプロセス」．『日本看護技術学会誌』，22，15-27．</li>
+        <li>河口賀彦，木嶋泰興，岡崎護，紙田信彦（2000）．「グリセリン浣腸により溶血（血尿）をきたした1例」．『日本臨床外科学会雑誌』，61(8)，2243．</li>
+        <li>大川尚臣，古田斗志也，金川泰一朗，小畑卓司，野上浩實（2017）．「保存的に軽快したグリセリン浣腸による直腸穿孔の2例」．『日本臨床外科学会雑誌』，78(5)，1041-1049．</li>
+        <li>萩原園子，折井みゆき，阿達亙（2017）．「グリセリン浣腸液の腸管外注入により，急性腎不全を来した嵌頓痔核の1症例」．『日本農村医学会雑誌』，66(4)，494-498．</li>
+        <li>杉原尚（1983）．「Glycerolによる赤血球溶血―臨床的及び実験的研究―」．『臨床血液』，24(8)，1012-1019．</li>
+        <li>日本消化管学会（2023）．『便通異常症診療ガイドライン2023 慢性便秘症』．南江堂．</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>グリセリン浣腸（GE）安全実践マスター教材 ｜ エビデンスに基づく看護教育支援</p>
+</footer>
+
+<script>
+  // タブ切り替え機能
+  function openTab(tabId) {
+    const sections = document.querySelectorAll('.chapter-section');
+    const buttons = document.querySelectorAll('.nav-btn');
+    sections.forEach(sec => sec.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(tabId).classList.add('active');
+    const tabMap = {'ch1':0, 'ch2':1, 'ch3':2, 'ch4':3, 'ch5':4, 'ref':5};
+    if (tabMap[tabId] !== undefined) {
+      buttons[tabMap[tabId]].classList.add('active');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // 用語集アコーディオン機能
+  function toggleGlossary(btn) {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('span');
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+      icon.textContent = '＋';
+    } else {
+      content.style.display = 'block';
+      icon.textContent = '－';
+    }
+  }
+
+  // 理解確認テスト採点・進捗管理
+  const answeredCorrectly = new Set();
+  const totalQuestions = 15;
+
+  function checkQuiz(qid, isCorrect, explanation) {
+    const fb = document.getElementById('fb-' + qid);
+    if (isCorrect) {
+      fb.className = 'quiz-feedback correct';
+      fb.innerHTML = '⭕ <strong>正解！</strong> ' + explanation;
+      answeredCorrectly.add(qid);
+    } else {
+      fb.className = 'quiz-feedback incorrect';
+      fb.innerHTML = '❌ <strong>不正解…</strong> ' + explanation;
+      answeredCorrectly.delete(qid);
+    }
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const count = answeredCorrectly.size;
+    document.getElementById('score-text').textContent = `${count} / ${totalQuestions} 問正解`;
+    const pct = Math.round((count / totalQuestions) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+  }
+
+  // 第3章：新規看護実践フロー インタラクティブシミュレーター
+  const flowSteps = {
+    start: {
+      q: "【スタート】まず「温罨法と腹部マッサージ」を実施しました。<br>続いて【基準①】直腸診で直腸内に便が触れますか？",
+      btns: [
+        { label: "Yes（便が触れる）", next: "q4", cls: "btn-yes" },
+        { label: "No（便が触れない）", next: "q2", cls: "btn-no" }
+      ]
+    },
+    q2: {
+      q: "【基準②】以下のうち、あてはまるものがありますか？<br>・打診で鼓音・濁音が著明<br>・触診で腹部膨満・張りがある<br>・最終排便から次回訪問まで1週間以上間隔があく",
+      btns: [
+        { label: "Yes（あてはまる）", next: "q6", cls: "btn-yes" },
+        { label: "No（あてはまらない）", next: "q3", cls: "btn-no" }
+      ]
+    },
+    q3: {
+      q: "【基準③】食事量が少ないですか？",
+      btns: [
+        { label: "Yes（少ない）", next: "res_watch", cls: "btn-yes" },
+        { label: "No（十分食べている）", next: "q6", cls: "btn-no" }
+      ]
+    },
+    q4: {
+      q: "【基準④】直腸診で触れた便を指で押すと、容易に変形しますか（軟らかいですか）？",
+      btns: [
+        { label: "Yes（容易に変形する軟便）", next: "q6", cls: "btn-yes" },
+        { label: "No（変形しない硬便）", next: "res_tekiben1", cls: "btn-no" }
+      ]
+    },
+    q6: {
+      q: "【基準⑥：最重要安全チェック】以下のうち、あてはまるものがありますか？<br>・循環動態に問題あり（収縮期血圧100mmHg未満）<br>・出血、便や直腸診の示指の血液付着、粘膜損傷あり（疑い含む）",
+      btns: [
+        { label: "Yes（1つでもあてはまる）", next: "res_stop_ge", cls: "btn-no" },
+        { label: "No（問題なし）", next: "res_do_ge", cls: "btn-yes" }
+      ]
+    },
+    res_watch: {
+      q: "✅ 【判定：経過観察（GEは不要）】<br>排便回数減少型便秘（大腸通過正常型）の可能性が高い状態です。便がまだ十分に生成されていないため、グリセリン浣腸は行わず、食物繊維摂取量の改善や排便ケア間隔の延長を考慮して経過観察とします。",
+      btns: []
+    },
+    res_tekiben1: {
+      q: "⚠️ 【判定：肛門付近の便の『摘便Ⅰ』を実施（GEは回避！）】<br>便が硬く粘膜損傷・溶血リスクが高いため、グリセリン浣腸は行わず、指腹で便を捉える『摘便Ⅰ（＋腹部圧迫）』を実施します。肛門付近の便を出した後、奥の便が軟らかくなれば再度基準⑥を経てGEを検討しますが、奥も硬ければ残りの便も『摘便Ⅰ』で出し、次回に向けて浸透圧性下剤（塩類下剤）を使用します。",
+      btns: []
+    },
+    res_stop_ge: {
+      q: "🛑 【判定：グリセリン浣腸は中止（実施しない）！】<br>低血圧（収縮期100mmHg未満）や出血・粘膜損傷の疑いがある状態でグリセリン浣腸を実施すると、重篤なショックや血管内流入による溶血・急性腎不全を引き起こすため絶対に行いません。直腸診で便が触れていれば、便の硬さに応じた『摘便（Ⅰ〜Ⅲ）』や『直腸刺激』のみで対応します。",
+      btns: []
+    },
+    res_do_ge: {
+      q: "🏥 【判定：粘膜損傷リスクが低い ➔『グリセリン浣腸＋腹部マッサージ』を実施！】<br>安全基準を満たしています。左側臥位・挿入長4.1〜4.5cm・50mL/15秒以上の速度でグリセリン浣腸を実施し、腹部マッサージを行います。排便後、残便があれば便の硬さに応じて『摘便Ⅰ〜Ⅲ＋直腸刺激』を追加し、終了基準を満たせばケア完了です。",
+      btns: []
+    }
+  };
+
+  function nextFlow(stepKey) {
+    const step = flowSteps[stepKey];
+    const qEl = document.getElementById('flow-q');
+    const bEl = document.getElementById('flow-btns');
+    qEl.innerHTML = step.q;
+    bEl.innerHTML = '';
+
+    step.btns.forEach(b => {
+      const btn = document.createElement('button');
+      btn.className = 'btn ' + b.cls;
+      btn.textContent = b.label;
+      btn.onclick = () => nextFlow(b.next);
+      bEl.appendChild(btn);
+    });
+
+    if (stepKey !== 'start') {
+      const resetBtn = document.createElement('button');
+      resetBtn.className = 'btn btn-reset';
+      resetBtn.textContent = '🔄 最初からやり直す';
+      resetBtn.onclick = () => nextFlow('start');
+      bEl.appendChild(resetBtn);
+    }
+  }
+</script>
+
+</body>
+</html>
