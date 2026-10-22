@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'ページ/**'
+      - 'pages/**'
       - '.github/workflows/update.yml'
   workflow_dispatch:
 
@@ -25,7 +25,7 @@ jobs:
           from pathlib import Path
           from urllib.parse import quote
 
-          root = Path("ページ")
+          root = Path("pages")
           files = []
           for p in root.rglob("*"):
               if p.is_file() and p.suffix.lower() == ".html":
