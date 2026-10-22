@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>私のHTML資料ライブラリ</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#f5f7fa;color:#243044;margin:0}
+header{background:#17365d;color:white;padding:32px 20px}
+header h1{margin:0 0 8px}
+main{max-width:900px;margin:30px auto;padding:0 16px}
+input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #ccd3dc;border-radius:8px;font-size:16px}
+#list{display:grid;gap:12px;margin-top:22px}
+.item{display:block;background:white;border:1px solid #e1e5eb;border-radius:10px;padding:18px;text-decoration:none;color:#17365d}
+.item:hover{background:#edf5ff}
+small{display:block;color:#687587;margin-top:7px}
+</style>
+</head>
+<body>
+<header>
+<h1>資料ライブラリ</h1>
+<p>医療安全・臨床倫理・理学療法などのHTML資料</p>
+</header>
+<main>
+<input id="search" placeholder="資料名を検索">
+<p id="count">読み込み中...</p>
+<div id="list"></div>
+</main>
+<script>
+let files=[];
+const list=document.getElementById("list");
+const count=document.getElementById("count");
+function render(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const found=files.filter(f=>f.name.toLowerCase().includes(q));
+ count.textContent=found.length+"件の資料";
+ list.replaceChildren();
+ for(const f of found){
+  const a=document.createElement("a");
+  a.className="item";
+  a.href=f.path;
+  a.textContent="📄 "+f.name;
+  list.appendChild(a);
+ }
+}
+document.getElementById("search").addEventListener("input",render);
+fetch("./library.json?time="+Date.now())
+ .then(r=>{if(!r.ok)throw Error();return r.json()})
+ .then(data=>{files=data;render()})
+ .catch(()=>{count.textContent="一覧を読み込めませんでした";});
+</script>
+</body>
+</html>
